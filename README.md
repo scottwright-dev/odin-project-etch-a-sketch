@@ -1,3 +1,5 @@
+## Etch-a-Sketch ##
+
 ### Description
 
 A browser based interactive Etch-a-Sketch webpage game built using JavaScript, HTML and CSS.
