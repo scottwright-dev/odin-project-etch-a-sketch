@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+}
+
+footer {
+    text-align: center; 
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
