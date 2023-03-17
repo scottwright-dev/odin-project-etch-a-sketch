@@ -15,7 +15,7 @@ h1 {
 #div-container {
     justify-content: center;
     display: grid;
-    grid-template-columns: repeat(16, 20px);
+    grid-template-columns: repeat(16, auto); 
   }
   
   #div-container div {
@@ -23,12 +23,16 @@ h1 {
     height: 20px;
     border: 1px solid black;
   }
+
+  #div-container div:hover {
+    background-color: gold;
+  }
   
 
 footer {
     text-align: center; 
     padding: 10px;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
