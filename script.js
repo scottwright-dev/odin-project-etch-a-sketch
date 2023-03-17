@@ -12,3 +12,12 @@ function createGrid(rows, columns) {
 }
 createGrid(16, 16);
 
+// Get all divs inside the container to apply hover state
+const colorDiv = document.querySelectorAll('#div-container div');
+
+// Add event listener to each div to change background color on hover
+colorDiv.forEach(div => {
+  div.addEventListener('mouseover', () => {
+    div.style.backgroundColor = 'black';
+  })
+});
