@@ -55,3 +55,19 @@ newGridButton.addEventListener('click', () => {
   const gridSize = generateGridSize();
   createGrid(gridSize, gridSize);
 });
+
+// --- ERASE FUNCTION ---
+function erase() {
+  const colorDiv = document.querySelectorAll('#div-container div');
+
+  colorDiv.forEach(div => {
+    div.style.backgroundColor = 'rgb(236, 236, 240)';
+  });
+}
+
+// event listener for the "Erase" button
+const eraseButton = document.getElementById('erase');
+
+eraseButton.addEventListener('click', () => {
+  erase();
+});
