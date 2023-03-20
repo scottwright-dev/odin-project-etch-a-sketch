@@ -21,9 +21,11 @@ function createGrid(rows, columns) {
     }
   }
 
-  // Call the addColorHover function
-  addColorHover();
+// Call the addColorHover function
+addColorHover();
 }
+// Initialize default grid
+createGrid(16, 16);
 
 // --- ADD COLOR ON HOVER ---
 function addColorHover() {
@@ -38,15 +40,20 @@ function addColorHover() {
 
 // --- NEW GRID BUTTON ---
 function generateGridSize() {
-  let gridSize = prompt('Enter desired grid size. Type a number between 1-100.');
-  while (gridSize > 100) {
-    gridSize = prompt('Your number must be less than or equal to 100:');
+  let gridSize = 0;
+  while (gridSize < 1 || gridSize > 100) {
+    gridSize = parseInt(prompt('Enter desired grid size. Type a number between 1-100.'), 10);
+    if (isNaN(gridSize)) {
+      alert('Incorrect format. Please enter a number between 1-100.');
+      gridSize = 0;
+    } else if (gridSize < 1 || gridSize > 100) {
+      alert('Your number must be between 1 and 100.');
+    }
   }
   return gridSize;
 }
 
-// Initialize default grid
-createGrid(16, 16);
+
 
 // Add event listener for the "New Grid" button
 const newGridButton = document.getElementById('gridButton');
