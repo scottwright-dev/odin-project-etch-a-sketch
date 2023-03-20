@@ -4,10 +4,19 @@ function createGrid(rows, columns) {
   const container = document.getElementById('div-container');
   container.innerHTML = ''; // Clear previous grid
 
+// Update the grid-template-columns property based on columns input
+  container.style.gridTemplateColumns = `repeat(${columns}, auto)`;
+
+  // Calculate the width and height of each grid cell
+  const cellWidth = container.clientWidth / columns;
+  const cellHeight = container.clientHeight / rows;
+
   //create rows and columns for the grid
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < columns; j++) {
       const square = document.createElement('div');
+      square.style.width = `${cellWidth}px`; // Set the width of the grid cell
+      square.style.height = `${cellHeight}px`; // Set the height of the grid cell
       container.appendChild(square);
     }
   }
