@@ -32,8 +32,23 @@ function addColorHover() {
   const colorDiv = document.querySelectorAll('#div-container div');
 
   colorDiv.forEach(div => {
+    let blackness = 0; // variable to keep track of the amount of black added to the div
     div.addEventListener('mouseover', () => {
-      div.style.backgroundColor = 'black';
+      // Generate random pastel shades for each color component
+      const red = Math.floor(Math.random() * 131) + 125;
+      const green = Math.floor(Math.random() * 131) + 125;
+      const blue = Math.floor(Math.random() * 131) + 125;
+
+      // add black to the color of the div
+      if (blackness < 100) {
+        blackness += 10;
+        const newRed = Math.round((1 - blackness / 100) * red);
+        const newGreen = Math.round((1 - blackness / 100) * green);
+        const newBlue = Math.round((1 - blackness / 100) * blue);
+        div.style.backgroundColor = `rgb(${newRed}, ${newGreen}, ${newBlue})`;
+      } else {
+        div.style.backgroundColor = 'black'; // After 10 passes, set color to black
+      }
     })
   });
 }
