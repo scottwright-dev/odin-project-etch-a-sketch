@@ -93,3 +93,8 @@ const eraseButton = document.getElementById('erase');
 eraseButton.addEventListener('click', () => {
   erase();
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('gridButton').click();
+});
+
