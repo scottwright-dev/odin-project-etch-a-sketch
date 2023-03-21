@@ -56,8 +56,15 @@ function addColorHover() {
 // --- NEW GRID BUTTON ---
 function generateGridSize() {
   let gridSize = 0;
+  let input;
   while (gridSize < 1 || gridSize > 100) {
-    gridSize = parseInt(prompt('Enter desired grid size. Type a number between 1-100.'), 10);
+    input = prompt('Enter desired grid size. Type a number between 1-100.');
+    
+    if (input === null) {
+      return null;
+    }
+    
+    gridSize = parseInt(input, 10);
     if (isNaN(gridSize)) {
       alert('Incorrect format. Please enter a number between 1-100.');
       gridSize = 0;
@@ -68,14 +75,14 @@ function generateGridSize() {
   return gridSize;
 }
 
-
-
 // Add event listener for the "New Grid" button
 const newGridButton = document.getElementById('gridButton');
 
 newGridButton.addEventListener('click', () => {
   const gridSize = generateGridSize();
-  createGrid(gridSize, gridSize);
+  if (gridSize !== null) {
+    createGrid(gridSize, gridSize);
+  }
 });
 
 // --- ERASE FUNCTION ---
@@ -92,9 +99,5 @@ const eraseButton = document.getElementById('erase');
 
 eraseButton.addEventListener('click', () => {
   erase();
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('gridButton').click();
 });
 
