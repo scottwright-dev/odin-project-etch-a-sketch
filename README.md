@@ -1,6 +1,6 @@
 ## Etch-a-Sketch ##
 
-[CLICK HERE FOR DEMO](https://scottwright-io.github.io/odin-project-etch-a-sketch/)
+[CLICK HERE FOR DEMO](https://scottwright-dev.github.io/odin-project-etch-a-sketch/)
 
 ### Description
 
